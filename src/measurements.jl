@@ -1,3 +1,6 @@
+# Part of Beauty.jl: Add Beauty to your julia output.
+# Copyright (C) 2019 Quantum Factory GmbH
+
 using Measurements
 using DocStringExtensions
 

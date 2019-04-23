@@ -1,3 +1,6 @@
+# Part of Beauty.jl: Add Beauty to your julia output.
+# Copyright (C) 2019 Quantum Factory GmbH
+
 """
 
 Guesses if an IO object has support for unicode and returns true if
