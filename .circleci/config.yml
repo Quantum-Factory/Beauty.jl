@@ -2,40 +2,51 @@
 version: 2.1
 
 orbs:
-  slack: circleci/slack@
+  slack: circleci/slack@1.0.0
   
 jobs:
   build:
     working_directory: ~/Beauty.jl
+
     docker:
       - image: julia:1.1.0 # image from Docker hub
+
     steps:
       - checkout
+      
       - restore_cache:
-        key: julia
+          key: julia
+
       - run:
           name: Test Package in Julia
           command: julia --project=. -e "import Pkg; Pkg.test()"
+          
       - run:
           name: Build Documentation
-          command: julia --project=. docs/make.jl
-      - slack/status:
+          command: julia --project=. docs/make.jl          
+
       - save_cache:
-        key: julia
-        paths:
-          - "~/.julia"
+          key: julia
+          paths:
+            - "~/.julia"
+
       - store_test_results:
-        path: test-results
+          path: test-results
+        
       - store_artifacts:
-        path: test-results
-        destination: docs
+          path: test-results
+          destination: docs
+        
       - store_artifacts:
-        path: trl
-        destination: docs
+          path: trl
+          destination: docs
+          
+      - slack/status:
+          fail_only: "false"
 
 workflows:
   version: 2
-  this-workflow:
+  my-workflow:
     jobs:
       - build:
-        context: default
+          context: default
