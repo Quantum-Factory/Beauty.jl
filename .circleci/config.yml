@@ -9,7 +9,7 @@ jobs:
     working_directory: ~/Beauty.jl
 
     docker:
-      - image: julia:1.1.0 # image from Docker hub
+      - image: quantumfactory/buildbot-julia:version1.0.test
 
     steps:
       - checkout
