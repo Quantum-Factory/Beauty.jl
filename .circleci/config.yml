@@ -36,7 +36,7 @@ jobs:
 
       - add_ssh_keys:
           fingerprints:
-            - "94:6c:f0:23:54:54:1a:43:98:82:1b:52:a5:5a:7a:ea"
+            - "99:bb:ff:b0:d0:8c:0f:eb:fe:5f:37:c5:f6:d2:b3:f5"
 
       - run:
           name: Upload Documentation
