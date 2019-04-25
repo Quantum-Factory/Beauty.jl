@@ -29,16 +29,9 @@ jobs:
           key: julia
           paths:
             - "~/.julia"
-
-      - store_test_results:
-          path: test-results
         
       - store_artifacts:
-          path: test-results
-          destination: docs
-        
-      - store_artifacts:
-          path: trl
+          path: docs/build
           destination: docs
           
       - slack/status:
