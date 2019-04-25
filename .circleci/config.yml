@@ -33,7 +33,15 @@ jobs:
       - store_artifacts:
           path: docs/build
           destination: docs
-          
+
+      - add_ssh_keys:
+          fingerprints:
+            - "94:6c:f0:23:54:54:1a:43:98:82:1b:52:a5:5a:7a:ea"
+
+      - run:
+          name: Upload Documentation
+          command: sftp -P $SSH_PORT docs/build/* $SSH_USER@$SSH_HOST:docs/github.com/Quantum-Factory/Beauty.jl/.
+
       - slack/status:
           fail_only: "false"
 
