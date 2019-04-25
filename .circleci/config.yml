@@ -40,7 +40,7 @@ jobs:
 
       - run:
           name: Upload Documentation
-          command: sftp -P $SSH_PORT docs/build/* $SSH_USER@$SSH_HOST:docs/github.com/Quantum-Factory/Beauty.jl/.
+          command: mv docs/build docs/Beauty.jl && echo -e 'put -r docs/Beauty.jl' | sftp -P $SSH_PORT $SSH_USER@$SSH_HOST:docs/github.com/Quantum-Factory
 
       - slack/status:
           fail_only: "false"
