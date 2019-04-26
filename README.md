@@ -14,4 +14,4 @@ Also, do read the
 
 Beauty.jl: Beauty for julia programs is Copyright (C) 2019 Quantum
 Factory GmbH and published under the
-[GPL3](https://quantum-factory.de/open-source/Beauty.jl/#GPL-Version-3-1).
+[GPL3](https://github.com/Quantum-Factory/Beauty.jl/blob/master/LICENSE).
