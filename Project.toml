@@ -12,6 +12,9 @@ Printf = "de0858da-6303-5e67-8744-51eddeeeb8d7"
 Requires = "ae029012-a4dd-5104-9daa-d747884805df"
 Unitful = "1986cc42-f94f-5a68-af5c-568840ba703d"
 
+[compat]
+julia = "1.0"
+
 [extras]
 DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
 Logging = "56ddb016-857b-54e1-b83d-db4d58db5568"
