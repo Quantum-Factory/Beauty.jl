@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/Quantum-Factory/Beauty.jl.svg?style=shield)](https://circleci.com/gh/Quantum-Factory/Beauty.jl)
+
 # Beauty.jl
 
 Beauty.jl provides Beauty for the output of your julia programs.
