@@ -23,7 +23,7 @@ jobs:
           
       - run:
           name: Upload test results to codecov.io
-          command: julia -e 'using Pkg; using Coverage; Codecov.submit_local(process_folder())'
+          command: julia -e 'using Pkg; Pkg.add("Coverage"); using Coverage; Codecov.submit_local(process_folder())'
 
       - run:
           name: Build Documentation
