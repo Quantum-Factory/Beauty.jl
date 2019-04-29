@@ -19,8 +19,12 @@ jobs:
 
       - run:
           name: Test Package in Julia
-          command: julia --project=. -e "import Pkg; Pkg.test()"
+          command: julia --project=. -e "import Pkg; Pkg.test(coverage=true)"
           
+      - run:
+          name: Upload test results to codecov.io
+          command: julia -e 'using Pkg; using Coverage; Codecov.submit_local(process_folder())'
+
       - run:
           name: Build Documentation
           command: julia --project=. docs/make.jl          
@@ -30,10 +34,6 @@ jobs:
           paths:
             - "~/.julia"
         
-      - store_artifacts:
-          path: docs/build
-          destination: docs
-
       - add_ssh_keys:
           fingerprints:
             - "99:bb:ff:b0:d0:8c:0f:eb:fe:5f:37:c5:f6:d2:b3:f5"

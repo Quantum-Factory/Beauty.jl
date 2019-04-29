@@ -20,21 +20,23 @@ function testshow(mime::String, got, want; broken::Bool=false)
     end
 end
 
-@testset "internals" begin
-    include("internals.jl")
-end
-@testset "show(::AbstractFloat)" begin
-    testshow("text/plain", 100.049, "100.0")
-    testshow("text/plain", 1.00049, "1.000")
-    testshow("text/plain", Float16(100.0), "100.0(2)")
-    testshow("text/plain", Float16(1.0), "1.00(3)")
-end
-@testset "show(::Measurements.Measurement)" begin
-    include("show-measurements.jl")
-end
-@testset "show(::Unitful.Quantity)" begin
-    include("show-unitful.jl")
-end
-@testset "show(::DataFrame)" begin
-    include("show-dataframes.jl")
+@testset "Beauty" begin
+    @testset "internals" begin
+        include("internals.jl")
+    end
+    @testset "show(::AbstractFloat)" begin
+        testshow("text/plain", 100.049, "100.0")
+        testshow("text/plain", 1.00049, "1.000")
+        testshow("text/plain", Float16(100.0), "100.0(2)")
+        testshow("text/plain", Float16(1.0), "1.00(3)")
+    end
+    @testset "show(::Measurements.Measurement)" begin
+        include("show-measurements.jl")
+    end
+    @testset "show(::Unitful.Quantity)" begin
+        include("show-unitful.jl")
+    end
+    @testset "show(::DataFrame)" begin
+        include("show-dataframes.jl")
+    end
 end

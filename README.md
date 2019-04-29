@@ -1,4 +1,5 @@
 [![CircleCI](https://circleci.com/gh/Quantum-Factory/Beauty.jl.svg?style=shield)](https://circleci.com/gh/Quantum-Factory/Beauty.jl)
+[![codecov](https://codecov.io/gh/Quantum-Factory/Beauty.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/Quantum-Factory/Beauty.jl)
 [![Documentation](https://img.shields.io/badge/docs-latest-blue.svg)](https://quantum-factory.de/open-source/Beauty.jl)
 
 # Beauty.jl
